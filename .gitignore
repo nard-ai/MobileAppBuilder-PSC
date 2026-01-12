@@ -39,3 +39,11 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+# Configuration builder
+uploads/
+*.backup*
+app.json.backup*
+
+# EAS
+.eas/
+eas-build-logs/

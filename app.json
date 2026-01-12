@@ -1,30 +1,43 @@
 {
   "expo": {
-    "name": "WebAppWrapperExpo",
-    "slug": "WebAppWrapperExpo",
+    "name": "Ordering App",
+    "slug": "orderingapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/pscLogo.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/pscLogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.psckiosk.WebAppWrapperExpo",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      }
     },
     "android": {
+      "package": "com.psckiosk.WebAppWrapperExpo",
+      "label": "Ordering App",
+      "usesCleartextTraffic": true,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/pscLogo.png",
         "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/pscLogo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5c7de5d4-a96b-4a4c-86d7-c09dc4af9a4a"
+      }
+    },
+    "owner": "partnersolutions"
   }
 }
