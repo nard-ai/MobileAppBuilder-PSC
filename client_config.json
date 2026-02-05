@@ -1,0 +1,7 @@
+{
+  "server_url": "http://localhost:3000",
+  "last_app_url": "http://192.168.1.226/NEWKIOSK",
+  "last_app_name": "My POS app",
+  "auto_retry": true,
+  "check_updates": true
+}

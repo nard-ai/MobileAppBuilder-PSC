@@ -49,12 +49,17 @@ RUN npm install -g yarn
 RUN npm install -g @expo/cli@latest && \
     npm install -g eas-cli@latest
 
-# Install Python packages commonly used in build processes
+# Install Python packages for server and build processes
 RUN python3.11 -m pip install --upgrade pip && \
     python3.11 -m pip install \
     requests \
     PyInstaller \
-    pillow
+    pillow \
+    fastapi[all] \
+    uvicorn[standard] \
+    websockets \
+    pydantic \
+    python-multipart
 
 # Create working directory
 WORKDIR /app
@@ -68,6 +73,9 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
+# Create necessary directories for builds, uploads, and logs
+RUN mkdir -p /app/builds /app/uploads /app/logs
+
 # Create a non-root user for security
 RUN useradd -m -s /bin/bash appuser && \
     chown -R appuser:appuser /app
@@ -78,8 +86,8 @@ USER appuser
 # Set up environment
 ENV PATH="/home/appuser/.local/bin:$PATH"
 
-# Expose common development ports
+# Expose common development ports and API server port
 EXPOSE 3000 8081 19000 19001 19002
 
-# Default command
-CMD ["bash"]
+# Default command - start the API server
+CMD ["python3", "server_api.py"]
