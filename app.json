@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Ordering App",
+    "name": "My POS app",
     "slug": "WebAppWrapperExpo",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,7 +23,7 @@
     },
     "android": {
       "package": "com.psckiosk.WebAppWrapperExpo",
-      "label": "Ordering App",
+      "label": "My POS app",
       "usesCleartextTraffic": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/pscLogo.png",
